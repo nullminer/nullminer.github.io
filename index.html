@@ -1,7 +1,206 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Workout</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <style>
+            .no-background {
+                border-style: none;
+                background-color: white;
+            }
+
+            .header {
+                position: fixed;
+                left: 0;
+                width: 100%;
+            }
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+            }
+
+            .bg-colour {
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            .nav-colour {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+
+            #home, #workout-plan {
+                display: block;
+            }
+
+            #workout, #nothing-here {
+                display: none;
+            }
+        </style>
+        <script>
+            $(function () {
+                $("[rel='tooltip']").tooltip();
+            })
+
+            function toggleVisibility(item) {
+                var homeElement = document.getElementById('home')
+                var workoutElement = document.getElementById('workout')
+
+                if (item == "home") {
+                    homeElement.style.display = "block"
+                    workoutElement.style.display = "none"
+                } else if (item == "workout") {
+                    homeElement.style.display = "none"
+                    workoutElement.style.display = "block"
+                }
+
+                if (item == "workout-plan") {
+                    workoutPlanElement.style.display = "block"
+                    nothingHereElement.style.display = "none"
+                } else if (item == "nothing-here") {
+                    workoutPlanElement.style.display = "none"
+                    nothingHereElement.style.display = "block"
+                }
+            }
+        </script>
+    </head>
     <body>
-        <h1>Hello World</h1>
-            <p>I'm hosted with GitHub Pages.</p>
+        <header>
+            <nav class="navbar navbar-expand-lg nav-colour">
+                <div class="navbar-collapse collapse w-100 dual-collapse2 order-0 order-md-0">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li class="nav-item">
+                            <a href="#" class="mx-auto" onclick="toggleVisibility('home')">
+                                <img src="images/icon.png" width="30px" height="30px">
+                            </a>
+                        </li>
+                    </ul>
+                    <p>&emsp;&emsp;&emsp;</p>
+                </div>
+                <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
+                    <ul class="navbar-nav me-auto text-center">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="toggleVisibility('workout')">Workout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <br>
+        </header>
+        <div class="container" id="home">
+            <h1 class="display-5">Home</h1>
+            <hr>
+            <p>We make workout plans, and if you are interested, please feel free to <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">contact us</a>.</p>
+        </div>
+        <div class="container" id="workout">
+            <div id="workout-plan">
+                <h1 class="display-3">Workout</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="" id="workout-today">
+                            <h1 id="today-date" class="display-5"></h1>
+                            <script>
+                                const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+                                const date = new Date()
+
+                                var currentMonth = months[date.getMonth()]
+                                var currentDate = date.getDate()
+                                document.getElementById('today-date').innerHTML = `Today, ${currentMonth} ${currentDate}`
+                            </script>
+                            <br>
+                            <script>
+                                // for loop
+                            </script>
+                            <p><input class="form-check-input" type="checkbox"> <span>Check</span></p>
+                        </div>
+                        <p>&nbsp;</p>
+                        <div class="" id="workout-week">
+                            <h1 class="display-5">Diet Plan</h1>
+                            <br>
+                            <script>
+                                // for loop
+                            </script>
+                            <p><input class="form-check-input" type="checkbox"> <span>Check</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="" id="notes">
+                            <h1 class="display-6">Notes</h1>
+                            <br>
+                            <p id="notes-text">None at the moment!</p>
+                        </div>
+                        <p>&nbsp;</p>
+                        <div class="" id="links">
+                            <h1 class="display-6">Links</h1>
+                            <br>
+                            <list>
+                                <li><a href="https://docs.google.com/document/d/1nYI56Oh9MOESAePtL5qgOEbhlhckRUX2qxWd-19JdZI/edit?usp=sharing" target="_blank" class="text-reset">Self Improvement</a></li>
+                                <li><a href="https://docs.google.com/document/d/1Cm2LRF0aH2T97mqi6W-CFoKvb14ZdpNdrvDbzWy7gY0/edit?usp=sharing" target="_blank" class="text-reset">Self Learning</a></li>
+                                <li>Workout Plan (WIP)</li>
+                                <li>Discord Server (WIP)</li>
+                            </list>
+                        </div>
+                        <p>&nbsp;</p>
+                        <div class="" id="account">
+                            <h1 class="display-6">Account</h1>
+                            <br>
+                            <p>Key: <span id="key-placeholder">N/A</span></p>
+                            <p>Account: <span id="account-placeholder">N/A</span></p>
+                            <p>Expiry: <span id="expiry-placeholder">N/A</span>, <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us" >Renew</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nothing-here">
+                <h1 class="display-5">There's nothing here.</h1>
+                <hr>
+                <p>Perhaps you don't have permission? For help, <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">contact us</a>.</p>
+                <p>&nbsp;</p>
+                <p><img src="https://http.cat/404.jpg" alt="404 cat not found" width="30%" height="30%"></p>
+            </div>
+            <script>
+                const urlParams = new URLSearchParams(window.location.search)
+                const key = urlParams.get('k')
+
+                // validate key, if invalid set key to null
+
+                if (key == null) {
+                    document.getElementById('workout-plan').style.display = "none"
+                    document.getElementById('nothing-here').style.display = "block"
+                }
+            </script>
+        </div>
+        <div class="modal" id="contact-us" tabindex="-1" role="dialog">
+            <p>&nbsp;</p>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Contact Information</h5>
+                    <button type="button" class="close no-background" data-bs-dismiss="modal" aria-label="Close">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>For questions, registration, or renewal, email either <a href="#" class="text-reset" rel="tooltip" title="boiscoolx@gmail.com">Bo</a> or <a href="#" class="text-reset" rel="tooltip" title="tunirmaity@gmail.com">Tunir</a>.</p>
+                    <p>Additionally, you can contact Tunir by <a href="#" class="text-reset" rel="tooltip" title="@gyro50">Discord</a>.</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <footer class="footer text-center text-lg-start bg-light text-muted">
+            <div class="text-center p-4 nav-colour">
+                <p>Copyright &copy; 2023, all rights reserved.</p>
+                <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">Contact Us</a> &emsp;
+                <a href="https://docs.google.com/document/d/11DugcAvZSDUNr9fYwKnCN0oGSIl9WHq5cZED4RNIgkk/edit?usp=sharing" target=”_blank” class="text-reset">Terms & Conditions</a> &emsp;
+                <a href="https://docs.google.com/document/d/1g-OrrOsmaKAp6XHnvpRiE4mzlx76gYqgWgT3o42G8Ck/edit?usp=sharing" target=”_blank” class="text-reset">Privacy Policy</a>
+            </div>
+        </footer>
     </body>
 </html>
