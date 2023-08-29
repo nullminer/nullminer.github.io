@@ -78,11 +78,11 @@
 
                 if (iconColour == "black") {
                     homeIconElement.src = "images/icon-white.png"
-                    modeSwitcherElement.innerText = "Light Mode"
+                    modeSwitcherElement.src = "images/icon-sun.png"
                     iconColour = "white"
                 } else {
                     homeIconElement.src = "images/icon-black.png"
-                    modeSwitcherElement.innerText = "Dark Mode"
+                    modeSwitcherElement.src = "images/icon-moon.png"
                     iconColour = "black"
                 }
             }
@@ -111,7 +111,7 @@
                 <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
                     <ul class="navbar-nav me-auto text-center">
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-reset" id="mode-switcher" onclick="toggleMode()">Dark Mode</a>
+                            <a href="#" class="nav-link text-reset" onclick="toggleMode()"><img src="images/icon-moon.png" id="mode-switcher" width="30px" height="30px"></a>
                         </li>
                     </ul>
                 </div>
