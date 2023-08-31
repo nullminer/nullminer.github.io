@@ -47,6 +47,8 @@
             }
         </style>
         <script>
+            const urlParams = new URLSearchParams(window.location.search)
+            const key = urlParams.get('k')
             var iconColour = "black"
 
             $(function () {
@@ -106,7 +108,7 @@
                         </li>
                         <p>&emsp;&emsp;&emsp;</p>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-reset">Discord</a>
+                            <a href="https://discord.gg/AC3Xt9yGaq" class="nav-link text-reset" target="_blank">Discord</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav me-auto">
@@ -116,12 +118,11 @@
                     </ul>
                 </div>
             </nav>
-            <br>
+            <p>&nbsp;</p>
         </header>
         <div class="container" id="home">
             <h1 class="display-5">Home</h1>
             <hr>
-            <p></p>
             <p>We make workout plans, and if you are interested, please feel free to <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">contact us</a>.</p>
         </div>
         <div class="container" id="workout">
@@ -140,37 +141,34 @@
                                 var currentDate = date.getDate()
                                 document.getElementById('today-date').innerText = `Today, ${currentMonth} ${currentDate}`
                             </script>
-                            <br>
-                            <script>
-                                // for loop
-                            </script>
-                            <p><input class="form-check-input" type="checkbox"> <span>Check</span></p>
+                            <p>&nbsp;</p>
+                            <iframe src="" id="spreadsheet-frame" width="90%" height="500"></iframe>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div id="notes">
-                            <h1 class="display-6">Notes</h1>
-                            <br>
-                            <p id="notes-text">None at the moment.</p>
-                        </div>
-                        <p>&nbsp;</p>
                         <div id="links">
                             <h1 class="display-6">Links</h1>
-                            <br>
                             <list>
-                                <li><a href="https://docs.google.com/document/d/1nYI56Oh9MOESAePtL5qgOEbhlhckRUX2qxWd-19JdZI/edit?usp=sharing" target="_blank" class="text-reset">Self Improvement</a></li>
-                                <li>Workout Plan (WIP)</li>
-                                <li>Discord Server (WIP)</li>
+                                <li><a href="https://docs.google.com/document/d/1nYI56Oh9MOESAePtL5qgOEbhlhckRUX2qxWd-19JdZI/edit?usp=sharing" class="text-reset" target="_blank">Self Improvement</a></li>
+                                <li><a href="" id="spreadsheet-link" class="text-reset" target="_blank">Workout Plan</a></li>
                             </list>
                         </div>
                         <p>&nbsp;</p>
                         <div id="account">
                             <h1 class="display-6">Account</h1>
-                            <br>
-                            <p>Key: <span id="key-placeholder">N/A</span></p>
-                            <p>Expiry: <span id="expiry-placeholder">N/A</span>, <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">Renew</a></p>
+                            <p>Key: <span id="key-placeholder"></span></p>
+                            <p><a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">Renew</a></p>
                         </div>
                     </div>
+                    <script>
+                        var spreadsheetFrameElement = document.getElementById('spreadsheet-frame')
+                        var spreadsheetLinkElement = document.getElementById('spreadsheet-link')
+                        var keyPlaceholderElement = document.getElementById('key-placeholder')
+
+                        spreadsheetFrameElement.src = `https://docs.google.com/spreadsheets/d/${key}/htmlembed`
+                        spreadsheetLinkElement.href = `https://docs.google.com/spreadsheets/d/${key}/edit?usp=sharing`
+                        keyPlaceholderElement.innerText = key
+                    </script>
                 </div>
             </div>
             <div id="nothing-here">
@@ -181,11 +179,6 @@
                 <p><img src="https://http.cat/404.jpg" alt="404 cat not found" width="30%" height="30%"></p>
             </div>
             <script>
-                const urlParams = new URLSearchParams(window.location.search)
-                const key = urlParams.get('k')
-
-                // validate key, if invalid set key to null
-
                 if (key == null) {
                     document.getElementById('workout-plan').style.display = "none"
                     document.getElementById('nothing-here').style.display = "block"
@@ -204,17 +197,14 @@
                   </div>
                   <div class="modal-body">
                     <p>For questions, registration, or renewal, email either <a href="#" class="text-reset" rel="tooltip" title="boiscoolx@gmail.com">Bo</a> or <a href="#" class="text-reset" rel="tooltip" title="tunirmaity@gmail.com">Tunir</a>.</p>
-                    <p>Additionally, you can contact Tunir by <a href="#" class="text-reset" rel="tooltip" title="@gyro50">Discord</a>.</p>
+                    <p>Additionally, you can contact <a href="#" class="text-reset" rel="tooltip" title="@btp42">Bo</a> or <a href="#" class="text-reset" rel="tooltip" title="@gyro50">Tunir</a> on Discord.</p>
                   </div>
                 </div>
               </div>
         </div>
         <footer>
-            <div class="footer text-center p-4 bar-white" id="footer">
-                <p>Copyright &copy; 2023, all rights reserved.</p>
-                <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">Contact Us</a> &emsp;
-                <a href="https://docs.google.com/document/d/11DugcAvZSDUNr9fYwKnCN0oGSIl9WHq5cZED4RNIgkk/edit?usp=sharing" target=”_blank” class="text-reset">Terms & Conditions</a> &emsp;
-                <a href="https://docs.google.com/document/d/1g-OrrOsmaKAp6XHnvpRiE4mzlx76gYqgWgT3o42G8Ck/edit?usp=sharing" target=”_blank” class="text-reset">Privacy Policy</a>
+            <div class="footer text-center p-3 bar-white" id="footer">
+                Copyright &copy; 2023, all rights reserved. | <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">Contact Us</a>
             </div>
         </footer>
     </body>
