@@ -175,8 +175,10 @@
                         var spreadsheetLinkElement = document.getElementById('spreadsheet-link')
                         var keyPlaceholderElement = document.getElementById('key-placeholder')
 
-                        spreadsheetFrameElement.src = `https://docs.google.com/spreadsheets/d/${key}/htmlembed`
-                        spreadsheetLinkElement.href = `https://docs.google.com/spreadsheets/d/${key}/edit?usp=sharing`
+                        var spreadsheetURL = `https://docs.google.com/spreadsheets/d/${key}/edit?usp=sharing`
+
+                        spreadsheetFrameElement.src = spreadsheetURL
+                        spreadsheetLinkElement.href = spreadsheetURL
                         keyPlaceholderElement.innerText = key
                     </script>
                 </div>
