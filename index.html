@@ -152,29 +152,18 @@
                     </div>
                     <div class="col-md-4">
                         <div id="links">
-                            <h1 class="display-6">Links</h1>
-                            <list>
-                                <li><a href="#" id="spreadsheet-link" class="text-reset" target="_blank">Workout Plan</a></li>
-                                <li><a href="https://calendly.com/ream-self-improvement" class="text-reset" target="_blank">Book Call</a></li>
-                            </list>
-                        </div>
-                        <p>&nbsp;</p>
-                        <div id="account">
-                            <h1 class="display-6">Account</h1>
-                            <p>Key: <span id="key-placeholder"></span></p>
-                            <p><a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">Renew</a></p>
+                            <h1 class="display-6">Book Meeting</h1>
+                            <p>&nbsp;</p>
+                            <!-- Calendly inline widget begin -->
+                            <div class="calendly-inline-widget" data-url="https://calendly.com/ream-self-improvement" style="min-width: 300px; height: 500px;"></div>
+                            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                            <!-- Calendly inline widget end -->
                         </div>
                     </div>
                     <script>
                         var spreadsheetFrameElement = document.getElementById('spreadsheet-frame')
-                        var spreadsheetLinkElement = document.getElementById('spreadsheet-link')
-                        var keyPlaceholderElement = document.getElementById('key-placeholder')
 
-                        var spreadsheetURL = `https://docs.google.com/spreadsheets/d/${key}/edit?usp=sharing`
-
-                        spreadsheetFrameElement.src = spreadsheetURL
-                        spreadsheetLinkElement.href = spreadsheetURL
-                        keyPlaceholderElement.innerText = key
+                        spreadsheetFrameElement.src = `https://docs.google.com/spreadsheets/d/${key}/edit?usp=sharing`
                     </script>
                 </div>
             </div>
