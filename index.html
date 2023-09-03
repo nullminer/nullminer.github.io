@@ -30,11 +30,11 @@
                 width: 100%;
             }
 
-            #home, #workout-plan {
+            #home {
                 display: block;
             }
 
-            #workout, #no-access {
+            #self-improvement, #booking {
                 display: none;
             }
 
@@ -58,14 +58,21 @@
 
             function toggleVisibility(element) {
                 var homeElement = document.getElementById('home')
-                var workoutElement = document.getElementById('workout')
+                var selfImprovementElement = document.getElementById('self-improvement')
+                var bookingElement = document.getElementById('booking')
 
                 if (element == "home") {
                     homeElement.style.display = "block"
-                    workoutElement.style.display = "none"
+                    selfImprovementElement.style.display = "none"
+                    bookingElement.style.display = "none"
+                } else if (element == "self-improvement") {
+                    homeElement.style.display = "none"
+                    selfImprovementElement.style.display = "block"
+                    bookingElement.style.display = "none"
                 } else {
                     homeElement.style.display = "none"
-                    workoutElement.style.display = "block"
+                    selfImprovementElement.style.display = "none"
+                    bookingElement.style.display = "block"
                 }
             }
 
@@ -105,11 +112,11 @@
                     <p>&emsp;&emsp;&emsp;</p>
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-reset" onclick="toggleVisibility('workout')">Workout</a>
+                            <a href="#" class="nav-link text-reset" onclick="toggleVisibility('self-improvement')">Self Improvement</a>
                         </li>
                         <p>&emsp;&emsp;&emsp;</p>
                         <li class="nav-item">
-                            <a href="https://docs.google.com/document/d/1PoEOR1kz-XiHD3dPV2z3aEc3SjMmdRrp0ibaatOKxHk/edit?usp=sharing" class="nav-link text-reset" target="_blank">Self Improvement</a>
+                            <a href="#" class="nav-link text-reset" onclick="toggleVisibility('booking')">Booking</a>
                         </li>
                         <p>&emsp;&emsp;&emsp;</p>
                         <li class="nav-item">
@@ -126,73 +133,34 @@
             <p>&nbsp;</p>
         </header>
         <div class="container" id="home">
-            <h1 class="display-5">Home</h1>
+            <h1 class="display-6">Home</h1>
             <hr>
             <p>We make workout plans, and if you are interested, please feel free to <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">contact us</a>.</p>
         </div>
-        <div class="container" id="workout">
-            <div id="workout-plan">
-                <h1 class="display-3">Workout</h1>
-                <hr>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div>
-                            <h1 id="today-date" class="display-6">Today</h1>
-                            <script>
-                                const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-                                const date = new Date()
-
-                                var currentMonth = months[date.getMonth()]
-                                var currentDate = date.getDate()
-                                document.getElementById('today-date').innerText = `Today, ${currentMonth} ${currentDate}`
-                            </script>
-                            <p>&nbsp;</p>
-                            <iframe src="" id="spreadsheet-frame" width="90%" height="500"></iframe>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="links">
-                            <h1 class="display-6">Book Meeting</h1>
-                            <p>&nbsp;</p>
-                            <!-- Calendly inline widget begin -->
-                            <div class="calendly-inline-widget" data-url="https://calendly.com/ream-self-improvement" style="min-width: 300px; height: 500px;"></div>
-                            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                            <!-- Calendly inline widget end -->
-                        </div>
-                    </div>
-                    <script>
-                        var spreadsheetFrameElement = document.getElementById('spreadsheet-frame')
-
-                        spreadsheetFrameElement.src = `https://docs.google.com/spreadsheets/d/${key}/edit?usp=sharing`
-                    </script>
-                </div>
-            </div>
-            <div id="no-access">
-                <h1 class="display-5">You don't have access.</h1>
-                <hr>
-                <p>Perhaps you aren't registered with us? For help, <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">contact us</a>.</p>
-                <p>&nbsp;</p>
-                <p><img src="https://http.cat/404.jpg" alt="404 cat not found" width="30%" height="30%"></p>
-            </div>
-            <script>
-                if (key == null) {
-                    document.getElementById('workout-plan').style.display = "none"
-                    document.getElementById('no-access').style.display = "block"
-                }
-            </script>
+        <div class="container" id="self-improvement">
+            <h1 class="display-6">Self Improvement</h1>
+            <hr>
+            <p>&nbsp;</p>
+        </div>
+        <div class="container" id="booking">
+            <h1 class="display-6">Booking</h1>
+            <hr>
+            <p>&nbsp;</p>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/ream-self-improvement" style="min-width: 400px; height: 600px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         </div>
         <div class="modal" id="contact-us" tabindex="-1" role="dialog">
             <p>&nbsp;</p>
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Contact Information</h5>
+                    <h5 class="modal-title">Contact Us</h5>
                     <button type="button" class="close no-background" data-bs-dismiss="modal" aria-label="Close">
                       <span>&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <p>For questions, registration, or renewal, email either <a href="#" class="text-reset" rel="tooltip" title="boiscoolx@gmail.com">Bo</a> or <a href="#" class="text-reset" rel="tooltip" title="tunirmaity@gmail.com">Tunir</a>.</p>
+                    <p>For questions, registration, or renewal, email either <a href="#" class="text-reset" rel="tooltip" title="bo.huang282@gmail.com">Bo</a> or <a href="#" class="text-reset" rel="tooltip" title="tunirmaity@gmail.com">Tunir</a>.</p>
                     <p>Additionally, you can join our Discord server and ask us there.</p>
                   </div>
                 </div>
