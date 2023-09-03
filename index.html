@@ -123,12 +123,32 @@
                             <a href="#" class="nav-link text-reset" onclick="toggleVisibility('booking')">Booking</a>
                         </li>
                         <script>
+                            var validKey = false
+                            const keys = [
+                                "gcAPvw5vTl",
+                                "N9wNFb1y3E",
+                                "jy87ScImSk",
+                                "CdLBtmWjXD",
+                                "Sb0sUBu45F",
+                                "L4SPS3N2VI",
+                                "BTmhyWSRlB",
+                                "AHFdIhh6wo",
+                                "yVCp2HEKkt"
+                            ]
+
                             var navbarSelfImprovementElement = document.getElementById('navbar-self-improvement')
                             var navbarBookingElement = document.getElementById('navbar-booking')
 
-                            if (key != "abc") {
+                            for (k of keys) {
+                                if (key == k) {
+                                    validKey = true
+                                    break
+                                }
+                            }
+
+                            if (!validKey) {
                                 navbarSelfImprovementElement.remove()
-                                navbarBookingElement.remove()
+                                navbarBookingElement.remove() 
                             }
                         </script>
                     </ul>
