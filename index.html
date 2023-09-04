@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>REAM | Self Improvement</title>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="images/icons/favicon.png">
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -28,6 +28,20 @@
                 left: 0;
                 bottom: 0;
                 width: 100%;
+            }
+
+            .home-div, .home-p {
+                margin-top: 35px;
+            }
+
+            .home-img {
+                float: left;
+                margin-top: 5px;
+                margin-right: 20px;
+            }
+
+            .home-p {
+                margin-top: 5px;
             }
 
             #home {
@@ -89,14 +103,14 @@
                 footerElement.classList.toggle('bar-dark')
 
                 if (iconColour == "black") {
-                    homeIconElement.src = "images/home-white.png"
-                    discordIconElement.src = "images/discord-white.png"
-                    modeSwitcherElement.src = "images/sun-white.png"
+                    homeIconElement.src = "images/icons/home-white.png"
+                    discordIconElement.src = "images/icons/discord-white.png"
+                    modeSwitcherElement.src = "images/icons/sun-white.png"
                     iconColour = "white"
                 } else {
-                    homeIconElement.src = "images/home-black.png"
-                    discordIconElement.src = "images/discord-black.png"
-                    modeSwitcherElement.src = "images/moon-black.png"
+                    homeIconElement.src = "images/icons/home-black.png"
+                    discordIconElement.src = "images/icons/discord-black.png"
+                    modeSwitcherElement.src = "images/icons/moon-black.png"
                     iconColour = "black"
                 }
             }
@@ -109,7 +123,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a href="#" onclick="toggleVisibility('home')">
-                                <img src="images/home-black.png" id="home-icon" width="30px" height="30px">
+                                <img src="images/icons/home-black.png" id="home-icon" width="30px" height="30px">
                             </a>
                         </li>
                     </ul>
@@ -154,11 +168,11 @@
                     </ul>
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a href="https://discord.gg/AC3Xt9yGaq" class="nav-link text-reset" target="_blank"><img src="images/discord-black.png" id="discord-icon" width="30px" height="30px"></a>
+                            <a href="https://discord.gg/AC3Xt9yGaq" class="nav-link text-reset" target="_blank"><img src="images/icons/discord-black.png" id="discord-icon" width="30px" height="30px"></a>
                         </li>
                         <p>&emsp;</p>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-reset" onclick="toggleMode()"><img src="images/moon-black.png" id="mode-switcher" width="30px" height="30px"></a>
+                            <a href="#" class="nav-link text-reset" onclick="toggleMode()"><img src="images/icons/moon-black.png" id="mode-switcher" width="30px" height="30px"></a>
                         </li>
                     </ul>
                 </div>
@@ -168,8 +182,27 @@
         <div class="container" id="home">
             <h1 class="display-6">Home</h1>
             <hr>
-            <p>We make workout plans, and if you are interested, please feel free to <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">contact us</a>.</p>
-        </div>
+            <div class="home-div">
+                <img src="images/pictures/logo.png" class="home-img" width="240px" height="240px">
+                <p>Relationships, Economics, Athletics & Mental Health or REAM for short is a project designed to help young men around the world achieve great things, primarily their purpose. We provide extensive education about many topics, such as muscle growth, nutrition, social tactics, business models and a plan to solve nearly all addictions.</p>
+                <p>The full course includes 2 weekly call sessions and 1 weekly gym session, plus customized plans for all your workouts, diets, meditation and other self-improvement habits. We also have a premium chat in our Discord community if you pay for the full course, which includes faster response times and a more tightly knit group of people. We’re offering the whole package for only $12 CAD a month. You’ve heard about return on investment (or ROI for short), right? The return on investment of this course is over 99%, if done correctly. If you don’t make that amount of money within 6-8 months, we’ll refund the money spent for the current period immediately, no questions asked.</p>
+                <p>We’ll tell you a bit about the founders of REAM, to show our qualifications.</p>
+            </div>
+            <div class="home-div row">
+                <div class="col">
+                    <img src="images/pictures/tunir.jpg" class="home-img" width="220px" height="260px">
+                    <p class="home-p"><b>Tunir</b></p>
+                    <p>I’m the guy to ask for anything fitness related, and I’ve got a lot of knowledge on the other topics as well. Currently, my bench press is estimated to be 100 kg at a weight of only 68kg. My squat and deadlift are well above 105 kg and 130 kg respectively, and my physique exceeds most adult males, despite being only 15. My goals right now are to keep growing this course, win a regional powerlifting competition and learn integrals & derivatives in calculus.</p>
+                </div>
+                <div class="col">
+                    <img src="images/pictures/bo.jpg" class="home-img" width="220px" height="260px">
+                    <p class="home-p"><b>Bo</b></p>
+                    <p>I'm the guy to ask for academic and sport specific stuff, but I know a lot about working out and strength training. I play a ton of sports, such as: American Football, Swimming, Badminton, Rugby, and I used to compete in Track & Field. Also, I have completed 4 online Computer Science courses (Intro, Web, AI, & GD) from Harvard, and I am learning university biology through MIT courses online despite being only 15.</p>
+                </div>
+            </div>
+            <div class="home-div">
+                <p>If you’re still on the fence about the course, you can join our community <a href="https://discord.gg/AC3Xt9yGaq" class="text-reset" target="_blank">Discord</a> as a free member and still have access to nearly all the channels.</p>
+            </div>
         <div class="container" id="self-improvement">
             <h1 class="display-6">Self Improvement</h1>
             <hr>
