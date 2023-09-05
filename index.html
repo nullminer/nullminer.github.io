@@ -26,7 +26,6 @@
 
             .footer {
                 position: fixed;
-                left: 0;
                 bottom: 0;
                 width: 100%;
             }
@@ -60,6 +59,10 @@
             button[aria-label="Close"] {
                 background-color: rgba(0, 0, 0, 0);
                 border-style: none;
+            }
+
+            input, textarea {
+                margin-bottom: 15px;
             }
         </style>
         <script>
@@ -118,68 +121,64 @@
         </script>
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg bar-white" id="navbar">
-                <div class="container">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="#" onclick="toggleVisibility('home')">
-                                <img src="images/icons/home-black.png" id="home-icon" width="30px" height="30px">
-                            </a>
-                        </li>
-                    </ul>
+        <nav class="navbar navbar-expand-lg bar-white" id="navbar">
+            <div class="container">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#" onclick="toggleVisibility('home')">
+                            <img src="images/icons/home-black.png" id="home-icon" width="30px" height="30px">
+                        </a>
+                    </li>
+                </ul>
+                <p>&emsp;&emsp;&emsp;</p>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-reset" onclick="toggleVisibility('self-improvement')">Self Improvement</a>
+                    </li>
                     <p>&emsp;&emsp;&emsp;</p>
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item" id="navbar-self-improvement">
-                            <a href="#" class="nav-link text-reset" onclick="toggleVisibility('self-improvement')">Self Improvement</a>
-                        </li>
-                        <p>&emsp;&emsp;&emsp;</p>
-                        <li class="nav-item" id="navbar-booking">
-                            <a href="#" class="nav-link text-reset" onclick="toggleVisibility('booking')">Booking</a>
-                        </li>
-                        <script>
-                            var validKey = false
-                            const keys = [
-                                "gcAPvw5vTl",
-                                "N9wNFb1y3E",
-                                "jy87ScImSk",
-                                "CdLBtmWjXD",
-                                "Sb0sUBu45F",
-                                "L4SPS3N2VI",
-                                "BTmhyWSRlB",
-                                "AHFdIhh6wo",
-                                "yVCp2HEKkt"
-                            ]
+                    <li class="nav-item" id="navbar-booking">
+                        <a href="#" class="nav-link text-reset" onclick="toggleVisibility('booking')">Booking</a>
+                    </li>
+                    <script>
+                        var validKey = false
+                        const keys = [
+                            "gcAPvw5vTl",
+                            "N9wNFb1y3E",
+                            "jy87ScImSk",
+                            "CdLBtmWjXD",
+                            "Sb0sUBu45F",
+                            "L4SPS3N2VI",
+                            "BTmhyWSRlB",
+                            "AHFdIhh6wo",
+                            "yVCp2HEKkt"
+                        ]
 
-                            var navbarSelfImprovementElement = document.getElementById('navbar-self-improvement')
-                            var navbarBookingElement = document.getElementById('navbar-booking')
+                        var navbarBookingElement = document.getElementById('navbar-booking')
 
-                            for (k of keys) {
-                                if (key == k) {
-                                    validKey = true
-                                    break
-                                }
+                        for (k of keys) {
+                            if (key == k) {
+                                validKey = true
+                                break
                             }
+                        }
 
-                            if (!validKey) {
-                                // navbarSelfImprovementElement.remove()
-                                navbarBookingElement.remove() 
-                            }
-                        </script>
-                    </ul>
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a href="https://discord.gg/AC3Xt9yGaq" class="nav-link text-reset" target="_blank"><img src="images/icons/discord-black.png" id="discord-icon" width="30px" height="30px"></a>
-                        </li>
-                        <p>&emsp;</p>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-reset" onclick="toggleMode()"><img src="images/icons/moon-black.png" id="mode-switcher" width="30px" height="30px"></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <p>&nbsp;</p>
-        </header>
+                        if (!validKey) {
+                            navbarBookingElement.remove() 
+                        }
+                    </script>
+                </ul>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="https://discord.gg/AC3Xt9yGaq" class="nav-link text-reset" target="_blank"><img src="images/icons/discord-black.png" id="discord-icon" width="30px" height="30px"></a>
+                    </li>
+                    <p>&emsp;</p>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-reset" onclick="toggleMode()"><img src="images/icons/moon-black.png" id="mode-switcher" width="30px" height="30px"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <p>&nbsp;</p>
         <div class="container" id="home">
             <h1 class="display-6">Home</h1>
             <hr>
@@ -220,23 +219,30 @@
             <p>&nbsp;</p>
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Contact Us</h5>
-                    <button type="button" class="close no-background" data-bs-dismiss="modal" aria-label="Close">
-                      <span>&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>For questions, registration, or renewal, email either <a href="#" class="text-reset" rel="tooltip" title="bo.huang282@gmail.com">Bo</a> or <a href="#" class="text-reset" rel="tooltip" title="tunirmaity@gmail.com">Tunir</a>.</p>
-                    <p>Additionally, you can join our Discord server and ask us there.</p>
-                  </div>
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfFfeNkW1xAUkBb_cMF20ABNaL1PTvlYp890uvKXr9JAscaUg/formResponse?" target="form-frame" onsubmit="submitted = true">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Contact Us</h5>
+                            <button type="button" class="close no-background" data-bs-dismiss="modal" aria-label="Close">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input class="form-control" name="entry.959835884" id="entry.959835884" type="text" placeholder="E-mail Address *" required>
+                            <textarea class="form-control" name="entry.1324672447" id="entry.1324672447" rows="4" placeholder="Message *" required></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <span>Not working? Try <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFfeNkW1xAUkBb_cMF20ABNaL1PTvlYp890uvKXr9JAscaUg/viewform?" class="text-reset" target="_blank">this</a>. &emsp;</span>
+                            <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="Send">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                    <iframe name="form-frame" id="form-frame" style="display: none;" onload="if (submitted) {}"></iframe>
                 </div>
-              </div>
-        </div>
-        <footer>
-            <div class="footer text-center p-3 bar-white" id="footer">
-                Copyright &copy; 2023, all rights reserved. | <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">Contact Us</a>
             </div>
+        </div>
+        <p>&nbsp;</p>
+        <footer class="footer text-center p-3 bar-white">
+            Copyright &copy; 2023, all rights reserved. | <a href="#" class="text-reset" data-bs-toggle="modal" data-bs-target="#contact-us">Contact Us</a>
         </footer>
     </body>
 </html>
