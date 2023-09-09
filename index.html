@@ -6,32 +6,34 @@
         <title>REAM | Self Improvement</title>
         <link rel="icon" type="image/x-icon" href="images/icons/favicon.png">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1112135475405383" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <style>
-            .main {
+            .section {
                 min-height: 100vh;
-                margin-bottom: -56px;
             }
 
-            .bar-colour {
-                background-color: rgba(0, 0, 0, 0.1);
+            .mini-section {
+                padding: 15px;
             }
 
-            .home-div {
-                margin-top: 35px;
-            }
-
-            .home-img {
+            .section-image {
                 float: left;
                 margin-top: 5px;
                 margin-right: 20px;
             }
 
-            .home-p {
-                margin-top: 5px;
+            .about-us {
+                padding-top: 20px;
+                text-align: left;
+            }
+
+            .bg {
+                background-image: url("images/background.jpg");
+                height: 100%;
+                background-position: left;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
 
             #home {
@@ -41,165 +43,87 @@
             #self-improvement, #booking {
                 display: none;
             }
-
-            button[aria-label="Close"] {
-                background-color: rgba(0, 0, 0, 0);
-                border-style: none;
-            }
-
-            input, textarea {
-                margin-bottom: 15px;
-            }
         </style>
-        <script>
-            const urlParams = new URLSearchParams(window.location.search)
-            const key = urlParams.get('k')
-
-            function toggleVisibility(element) {
-                var homeElement = document.getElementById('home')
-                var selfImprovementElement = document.getElementById('self-improvement')
-                var bookingElement = document.getElementById('booking')
-
-                if (element == "home") {
-                    homeElement.style.display = "block"
-                    selfImprovementElement.style.display = "none"
-                    bookingElement.style.display = "none"
-                } else if (element == "self-improvement") {
-                    homeElement.style.display = "none"
-                    selfImprovementElement.style.display = "block"
-                    bookingElement.style.display = "none"
-                } else {
-                    homeElement.style.display = "none"
-                    selfImprovementElement.style.display = "none"
-                    bookingElement.style.display = "block"
-                }
-            }
-        </script>
     </head>
-    <body>
-        <div class="main">
-            <nav class="navbar navbar-expand-lg bar-colour">
-                <div class="container">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="#" onclick="toggleVisibility('home')">
-                                <img src="images/icons/home.png" width="30px" height="30px">
-                            </a>
-                        </li>
-                    </ul>
-                    <p>&emsp;&emsp;&emsp;</p>
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-reset" onclick="toggleVisibility('self-improvement')">Self Improvement</a>
-                        </li>
-                        <p>&emsp;&emsp;&emsp;</p>
-                        <li class="nav-item" id="navbar-booking">
-                            <a href="#" class="nav-link text-reset" onclick="toggleVisibility('booking')">Booking</a>
-                        </li>
-                        <script>
-                            var validKey = false
-                            const keys = [
-                                "gcAPvw5vTl",
-                                "N9wNFb1y3E",
-                                "jy87ScImSk",
-                                "CdLBtmWjXD",
-                                "Sb0sUBu45F",
-                                "L4SPS3N2VI",
-                                "BTmhyWSRlB",
-                                "AHFdIhh6wo",
-                                "yVCp2HEKkt"
-                            ]
-
-                            var navbarBookingElement = document.getElementById('navbar-booking')
-
-                            for (k of keys) {
-                                if (key == k) {
-                                    validKey = true
-                                    break
-                                }
-                            }
-
-                            if (!validKey) {
-                                navbarBookingElement.remove() 
-                            }
-                        </script>
-                    </ul>
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a href="https://discord.gg/AC3Xt9yGaq" class="nav-link text-reset" target="_blank"><img src="images/icons/discord.png" width="30px" height="30px"></a>
-                        </li>
-                        <p>&emsp;</p>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-reset" data-bs-toggle="modal" data-bs-target="#contact-us"><img src="images/icons/message.png" width="25px" height="25px"></a>
-                        </li>
-                    </ul>
+    <body class="bg">
+        <div class="container text-center">
+            <div class="section align-items-center d-flex">
+                <div class="mini-section col">
+                    <h1 class="display-1"><strong>REAM</strong></h1>
+                    <h1 class="display-6">Self Improvement</h1>
+                    <p>&nbsp;</p>
+                    <p class="lead"><a href="https://docs.google.com/document/d/1PoEOR1kz-XiHD3dPV2z3aEc3SjMmdRrp0ibaatOKxHk/edit?usp=sharing" class="text-reset text-decoration-none">Proceed to Course <img src="images/icons/arrow-right.svg" width="20px" height="20px"></a></p>
                 </div>
-            </nav>
-            <p>&nbsp;</p>
-            <div class="container" id="home">
-                <h1 class="display-6">Home</h1>
-                <hr>
-                <div class="home-div">
-                    <img src="images/pictures/logo.png" class="home-img" width="240px" height="240px">
-                    <p>Relationships, Economics, Athletics & Mental Health or REAM for short is a project designed to help young men around the world achieve great things, primarily their purpose. We provide extensive education about many topics, such as muscle growth, nutrition, social tactics, business models and a plan to solve nearly all addictions.</p>
-                    <p>The full course includes 2 weekly call sessions and 1 weekly gym session, plus customized plans for all your workouts, diets, meditation and other self-improvement habits. We also have a premium chat in our Discord community if you pay for the full course, which includes faster response times and a more tightly knit group of people. We're offering the whole package for only $12 CAD a month. You've heard about return on investment (or ROI for short), right? The return on investment of this course is over 99%, if done correctly. If you don't make that amount of money within 6-8 months, we'll refund the money spent for the current period immediately, no questions asked.</p>
-                    <p>We'll tell you a bit about the founders of REAM, to show our qualifications.</p>
-                </div>
-                <div class="home-div row">
-                    <div class="col">
-                        <img src="images/pictures/tunir.jpg" class="home-img" width="220px" height="260px">
-                        <p class="home-p"><b>Tunir</b></p>
-                        <p>I'm the guy to ask for anything fitness related, and I've got a lot of knowledge on the other topics as well. Currently, my bench press is estimated to be 100 kg at a weight of only 68kg. My squat and deadlift are well above 105 kg and 130 kg respectively, and my physique exceeds most adult males, despite being younger. My goals right now are to keep growing this course, win a regional powerlifting competition and learn integrals & derivatives in calculus.</p>
-                    </div>
-                    <div class="col">
-                        <img src="images/pictures/bo.jpg" class="home-img" width="220px" height="260px">
-                        <p class="home-p"><b>Bo</b></p>
-                        <p>I'm the guy to ask for academic and sport specific stuff, but I know a lot about working out and strength training. I play a ton of sports, such as: American Football, Swimming, Badminton, Rugby, and I used to compete in Track & Field. Also, I have completed 4 online Computer Science courses (Intro, Web, AI, & GD) from Harvard, and I am learning university biology through MIT courses online.</p>
-                    </div>
-                </div>
-                <div class="home-div">
-                    <p>If you're still on the fence about the course, you can join our community <a href="https://discord.gg/AC3Xt9yGaq" class="text-reset" target="_blank">Discord</a> as a free member and still have access to nearly all the channels.</p>
+                <div class="mini-section col">
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/[placeholder]" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="container" id="self-improvement">
-                <h1 class="display-6">Self Improvement</h1>
-                <hr>
-                <iframe src="https://docs.google.com/document/d/1PoEOR1kz-XiHD3dPV2z3aEc3SjMmdRrp0ibaatOKxHk/edit?usp=sharing" width="100%" height="675"></iframe>
-            </div>
-            <div class="container" id="booking">
-                <h1 class="display-6">Booking</h1>
-                <hr>
-                <div class="calendly-inline-widget" data-url="https://calendly.com/ream-self-improvement" style="min-width: 400px; height: 675px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            </div>
-            <div class="modal" id="contact-us" tabindex="-1" role="dialog">
-                <p>&nbsp;</p>
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfFfeNkW1xAUkBb_cMF20ABNaL1PTvlYp890uvKXr9JAscaUg/formResponse?" target="form-frame" onsubmit="submitted = true">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Contact Us</h5>
-                                <button type="button" class="close no-background" data-bs-dismiss="modal" aria-label="Close">
-                                    <span>&times;</span>
-                                </button>
+            <div class="section" id="about-us">
+                <div class="mini-section">
+                    <h1 class="display-4"><strong>About Us</strong></h1>
+                </div>
+                <div class="mini-section" style="padding-top: 50px;">
+                    <div class="row">
+                        <div class="col" style="padding-right: 30px;">
+                            <img src="images/pictures/tunir.jpg" class="section-image" width="200px" height="260px">
+                            <div class="about-us">
+                                <p class="lead">Tunir M.</p>
+                                <p>I'm the guy to ask for anything fitness related, and I've got a lot of knowledge on the other topics. My bench press is estimated to be 100 kg at a weight of only 68kg. My squat and deadlift are well above 105 kg and 130 kg respectively, and my physique exceeds most adult males.</p>
                             </div>
-                            <div class="modal-body">
-                                <input class="form-control" name="entry.959835884" id="entry.959835884" type="text" placeholder="E-mail Address *" required>
-                                <textarea class="form-control" name="entry.1324672447" id="entry.1324672447" rows="4" placeholder="Message *" required></textarea>
+                        </div>
+                        <div class="col" style="padding-left: 30px;">
+                            <img src="images/pictures/bo.jpg" class="section-image" width="200px" height="260px">
+                            <div class="about-us">
+                                <p class="lead">Bo H.</p>
+                                <p>I'm the guy to ask for academic and sport specific stuff, but I know a lot about working out and strength training. I play a ton of sports, I have completed 4 online Computer Science courses from Harvard, and I am learning university biology online.</p>
                             </div>
-                            <div class="modal-footer">
-                                <span>Not working? Try <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFfeNkW1xAUkBb_cMF20ABNaL1PTvlYp890uvKXr9JAscaUg/viewform?" class="text-reset" target="_blank">this</a>. &emsp;</span>
-                                <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="Send">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <p>&nbsp;</p>
+                    <div class="row">
+                        <div class="col" style="padding-right: 30px;">
+                            <img src="images/pictures/matthew.jpg" class="section-image" width="200px" height="260px">
+                            <div class="about-us">
+                                <p class="lead">Matthew H.</p>
+                                <p>My name is Matthew, If you have questions about business or relations, I'm your guy. I love making connections and everything economics. My goal working with REAM is to give others the skills to prosper financially and socially.</p>
                             </div>
-                        </form>
-                        <iframe name="form-frame" id="form-frame" style="display: none;" onload="if (submitted) {}"></iframe>
+                        </div>
+                        <div class="col" style="padding-left: 30px;">
+                            <img src="images/pictures/joseph.jpg" class="section-image" width="200px" height="260px">
+                            <div class="about-us">
+                                <p class="lead">Joseph W.</p>
+                                <p>Hey, I'm Joe. I'm the guy to go to when you have any questions related to tech like hardware, software, optimizations, stuff like that. I play all the sports but I'm best at frisbee, dodgeball, badminton, and volleyball.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="section row" id="contact-us">
+                <div class="mini-section col" style="padding-top: 50px;">
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfFfeNkW1xAUkBb_cMF20ABNaL1PTvlYp890uvKXr9JAscaUg/formResponse?" id="contact-us" target="form-frame">
+                        <h1 class="display-6">Contact Us</h1>
+                        <div style="text-align: left; padding: 15px;">
+                            <div class="mb-3">
+                                <label for="entry.959835884" class="form-label">E-mail *</label>
+                                <input class="form-control" name="entry.959835884" id="entry.959835884" type="text" placeholder="example@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="entry.1324672447" class="form-label">Message *</label>
+                                <textarea class="form-control" name="entry.1324672447" id="entry.1324672447" rows="4" placeholder="I have this question..." required></textarea>
+                                <div class="form-text">Items marked with * are required.</div>
+                            </div>
+                        </div>
+                        <div style="text-align: right; padding-right: 30px;">
+                            <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="Submit">
+                        </div>
+                    </form>
+                    <iframe name="form-frame" id="form-frame" style="display: none;" onload="document.getElementById('contact-us').reset()"></iframe>
+                </div>
+                <div class="mini-section col">
+                    <iframe src="https://discord.com/widget?id=1146253596019658884&theme=dark" width="360" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                </div>
+                <h1 class="display-6"><a href="https://docs.google.com/document/d/1PoEOR1kz-XiHD3dPV2z3aEc3SjMmdRrp0ibaatOKxHk/edit?usp=sharing" class="text-reset text-decoration-none">Join us today!</a></h1>
             </div>
         </div>
-        <footer class="text-center p-3 bar-colour">
-            Copyright &copy; 2023, all rights reserved.
-        </footer>
     </body>
 </html>
