@@ -1,0 +1,39 @@
+.section {
+    min-height: 90vh;
+}
+
+.section-m {
+    padding: 15px;
+}
+
+.section-i {
+    float: left;
+    margin-top: 5px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.about-us {
+    padding-top: 25px;
+    text-align: left;
+}
+
+.bg {
+    background-image: url("images/background.jpg");
+    height: 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-item {
+    padding-right: 40px;
+}
+
+#home {
+    display: block;
+}
+
+#self-improvement, #booking {
+    display: none;
+}
