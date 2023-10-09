@@ -39,24 +39,27 @@
                     <h1 class="display-6">Course</h1>
                 </div>
                 <hr style="width: 1px; height: 30vh; background-color: black;">
-                <div class="section col" style="padding-left: 12%;">
-                    <form method="post" onsubmit="passwordEnter()">
-                        <div class="row">
-                            <div class="col-auto">
-                                <input class="form-control" id="password" type="password" placeholder="Password" required>
-                            </div>
-                            <div class="col-auto">
-                                <input type="submit" class="btn btn-primary" value="Enter">
-                            </div>
+                <div class="section col" style="padding-left: 15%;">
+                    <div class="row">
+                        <div class="col-auto">
+                            <input class="form-control" id="password" type="password" placeholder="Password" required>
                         </div>
-                    </form>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" onclick="passwordEnter()">Enter</button>
+                        </div>
+                    </div>
                     <script>
                         function passwordEnter() {
-                            const key = ""
-                            var password = document.getElementById('password').value
+                            const key = "QW7gkmy4zm"
+                            var password = document.getElementById('password')
 
-                            if (key == password) {
-                                // unlock the rest of the webpage
+                            if (key == password.value) {
+                                window.location.replace('index.html')
+                                // replace page with course content
+                                // two images with one on accessing course, one on course material
+                            } else {
+                                password.classList.add('is-invalid')
+                                password.value = ""
                             }
                         }
                     </script>
