@@ -20,7 +20,7 @@
 }
 
 .bg {
-    background-image: url("images/background.jpg");
+    background-image: url("../resources/images/background.jpg");
     height: 100%;
     background-position: left;
     background-repeat: no-repeat;
