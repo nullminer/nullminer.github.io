@@ -52,19 +52,7 @@
                         theme: 'snow'
                     });
 
-                    let name = "quill=";
-                    let decodedCookie = decodeURIComponent(document.cookie);
-                    let ca = decodedCookie.split(';');
-                    for (let i = 0; i < ca.length; i++) {
-                        let c = ca[i];
-                        while (c.charAt(0) == ' ') {
-                          c = c.substring(1);
-                        }
-                        if (c.indexOf(name) == 0) {
-                            document.getElementById('quill-editor').innerHTML = c.substring(name.length, c.length);
-                        }
-                    }
-
+                    /*
                     var change = new Delta();
                     quill.on('text-change', function(delta) {
                         change = change.compose(delta);
@@ -72,10 +60,7 @@
 
                     setInterval(function() {
                         if (change.length() > 0) {
-                            const d = new Date();
-                            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-                            document.cookie = "quill=" + JSON.stringify(quill.getContents()) + ";expires=" + d.toUTCString(); + ";path=/";
-                            change = new Delta();
+                            // save
                         }
                     }, 5*1000);
 
@@ -84,6 +69,7 @@
                             return 'There are unsaved changes. Are you sure you want to leave?';
                         }
                     }
+                    */
                 </script>
             </div>
             <div id="llama2" class="column" style="width: 30%;">
